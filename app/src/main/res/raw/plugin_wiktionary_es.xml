@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+    <ShortName>Wiktionary (ES)</ShortName>
+    <Description>El diccionario libre</Description>
+    <Url type="text/html" method="get" template="http://es.wiktionary.org//wiki/Spezial:Suche?search={searchTerms}"/>
+    <Url type="application/x-suggestions+json" template="https://es.wiktionary.org/w/api.php?action=opensearch&amp;search={searchTerms}"/>
+    <InputEncoding>UTF-8</InputEncoding>
+    <moz:SearchForm>http://es.wiktionary.org/</moz:SearchForm>
+</OpenSearchDescription>

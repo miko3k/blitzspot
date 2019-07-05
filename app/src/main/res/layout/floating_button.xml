@@ -1,0 +1,35 @@
+<org.deletethis.blitzspot.app.button.SearchButton xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_container"
+    android:layout_width="@dimen/buttonTotalSite"
+    android:layout_height="@dimen/buttonTotalSite">
+
+        <com.skyfishjy.library.RippleBackground xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/ripple_background"
+            android:layout_width="@dimen/buttonTotalSite"
+            android:layout_height="@dimen/buttonTotalSite"
+            app:rb_color="#0099CC"
+            app:rb_duration="1000"
+            app:rb_radius="16dp"
+            app:rb_rippleAmount="1"
+            app:rb_scale="3">
+
+            <FrameLayout android:id="@+id/collapsed_iv"
+                android:layout_width="@dimen/buttonSize"
+                android:layout_height="@dimen/buttonSize"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/jump_button_background"
+                android:elevation="5dp"
+                android:clickable="true">
+
+                <org.deletethis.blitzspot.lib.icon.IconView
+                    android:id="@+id/icon"
+                    android:layout_width="@dimen/pluginIconSize"
+                    android:layout_height="@dimen/pluginIconSize"
+                    android:layout_gravity="center"/>
+
+            </FrameLayout>
+        </com.skyfishjy.library.RippleBackground>
+
+</org.deletethis.blitzspot.app.button.SearchButton>

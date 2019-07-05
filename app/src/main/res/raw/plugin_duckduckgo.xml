@@ -1,0 +1,8 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+    xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+    <!-- Created on Sat, 19 May 2018 14:41:07 GMT -->
+    <ShortName>DuckDuckGo</ShortName>
+    <Url type="text/html" method="get" template="https://duckduckgo.com/?kam=osm&amp;kp=-2&amp;ia=web&amp;q={searchTerms}"/>
+    <InputEncoding>UTF-8</InputEncoding>
+    <moz:SearchForm>https://duckduckgo.com</moz:SearchForm>
+</OpenSearchDescription>

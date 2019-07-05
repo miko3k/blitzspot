@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription
+    xmlns="http://a9.com/-/spec/opensearch/1.1/"
+    xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+    <ShortName>IMDb</ShortName>
+    <Description>The Internet Movie Database</Description>
+    <Url type="text/html" method="get" template="https://www.imdb.com/find?q={searchTerms}&amp;s=all"/>
+    <InputEncoding>UTF-8</InputEncoding>
+    <moz:SearchForm>https://www.imdb.com</moz:SearchForm>
+    <Url type="application/opensearchdescription+xml" rel="self" template="https://mycroftproject.com/updateos.php/id0/imdb_ssl.xml"/>
+</OpenSearchDescription>

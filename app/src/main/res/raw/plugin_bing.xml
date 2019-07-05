@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+    xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+    <ShortName>Bing</ShortName>
+    <Url type="text/html" method="get" template="https://www.bing.com/search?q={searchTerms}&amp;safesearch=off"/>
+    <Url type="application/x-suggestions+json" template="http://api.bing.com/osjson.aspx?query={searchTerms}"/>
+    <InputEncoding>UTF-8</InputEncoding>
+    <moz:SearchForm>https://www.bing.com/</moz:SearchForm>
+</OpenSearchDescription>

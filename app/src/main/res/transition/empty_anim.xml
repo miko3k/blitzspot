@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- https://stackoverflow.com/questions/46401883/oreo-disable-activity-transition-animation -->
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+    android:transitionOrdering="sequential" android:duration="5000">
+    <fade/>
+    <changeBounds/>
+</transitionSet>

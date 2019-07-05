@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activityRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/headerBarHeight"
+        android:orientation="horizontal"
+        android:background="@drawable/search_oval"
+        style="@style/HeaderBox">
+
+        <org.deletethis.blitzspot.app.activities.search.SearchEditText
+            android:id="@+id/query"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:inputType="text"
+            android:paddingStart="16dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorTextReverse"
+            android:textColorHint="@color/colorTextFadedReverse"
+            tools:text="Query" />
+
+        <ImageButton
+            android:id="@+id/action"
+            style="@style/SearchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/search_clear" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/suggestions"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:overScrollMode="never"
+        tools:listitem="@layout/search_choice" />
+
+</LinearLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.deletethis.blitzspot.app">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:name="org.deletethis.blitzspot.app.SearchApplication">
+
+        <meta-data android:name="io.fabric.ApiKey" android:value="2e6cdcc5907107a161b5c8724435134889c09926"/>
+
+        <activity
+            android:name=".activities.main.MainActivity"
+            android:windowSoftInputMode="adjustNothing"
+            android:theme="@style/AppTheme">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activities.search.SearchActivity"
+            android:windowSoftInputMode="adjustResize|stateAlwaysVisible"
+            android:theme="@style/AppTheme.SearchActivity"
+            android:taskAffinity=""
+            android:noHistory="true"/>
+
+        <activity
+            android:name=".activities.add.AddActivity"
+            android:theme="@style/AppTheme.PopupActivity"
+            android:noHistory="true"/>
+
+        <activity
+            android:name=".activities.mycroft.MycroftActivity"
+            android:theme="@style/AppTheme.FullscreenActivity"/>
+
+        <activity
+            android:name=".activities.info.InfoActivity"
+            android:theme="@style/AppTheme.DialogActivity"/>
+
+        <activity
+            android:name=".activities.settings.SettingsActivity"
+            android:theme="@style/AppTheme.FullscreenActivity"/>
+
+        <activity
+            android:name=".activities.predefined.PredefinedActivity"
+            android:theme="@style/AppTheme.DialogActivity"/>
+
+        <activity
+            android:name=".activities.LaunchSearchActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:taskAffinity="@string/search_affinity"
+            android:excludeFromRecents="true"
+            android:autoRemoveFromRecents="true"/>
+
+        <activity
+            android:name=".activities.defplugin.DefpluginActivity"
+            android:theme="@style/AppTheme.DialogActivity"
+            />
+
+        <activity
+            android:name=".activities.jump.JumpActivity"
+            android:theme="@style/AppTheme.DialogActivity"
+            android:noHistory="true"
+            android:launchMode="singleTask"
+            android:excludeFromRecents="true"
+            android:taskAffinity="@string/search_affinity"
+            />
+
+
+        <service android:name=".service.ButtonService" android:enabled="true" android:exported="false"/>
+
+        <receiver android:name=".service.BootReceiver" android:enabled="false" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

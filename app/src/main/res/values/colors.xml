@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#281408</color>
+    <color name="colorPrimaryBright">#493b32</color>
+    <!--<color name="colorPrimaryDark">#303F9F</color>-->
+    <color name="colorAccent">#ff4081</color>
+    <color name="colorSelection">#22000000</color>
+    <color name="colorText">#bb000000</color>
+    <color name="colorTextFaded">#88000000</color>
+    <color name="colorTextReverse">#efff</color>
+    <color name="colorTextFadedReverse">#9fff</color>
+
+    <color name="colorMainBubble">#FFFFFF</color>
+    <color name="colorMainBubbleShadow">#555</color>
+    <color name="colorMainItemActivated">#c6c6c6</color>
+
+    <color name="colorButton">#4080FF</color>
+
+    <color name="design_snackbar_background_color" tools:override="true">@color/colorPrimary</color>
+</resources>

@@ -1,0 +1,22 @@
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <SwitchPreferenceCompat
+        app:iconSpaceReserved="false"
+        app:key="@string/pref_private_mode"
+        app:title="Incognito mode" />
+
+    <Preference
+            app:iconSpaceReserved="false"
+            app:key="@string/pref_clear_history"
+            app:title="Clear history" />
+
+    <org.deletethis.blitzspot.app.activities.settings.MySwitchPreference
+        app:key="@string/pref_instant_active"
+        app:title="@string/enable_instant"/>
+
+    <Preference
+        app:key="@string/pref_instant_plugin"
+        app:title="@string/instant_plugin"/>
+
+</androidx.preference.PreferenceScreen>

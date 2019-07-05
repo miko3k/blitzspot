@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+    <ShortName>Google Search</ShortName>
+    <Url type="text/html" method="get" template="https://www.google.com/search?q={searchTerms}"/>
+    <Url type="application/x-suggestions+json" template="https://suggestqueries.google.com/complete/search?output=firefox&amp;client=firefox&amp;q={searchTerms}"/>
+    <InputEncoding>UTF-8</InputEncoding>
+    <moz:SearchForm>https://www.google.com/</moz:SearchForm>
+    <Attribution>©2018 Google LLC All rights reserved. Google and the Google logo are registered trademarks of Google LLC.</Attribution>
+</OpenSearchDescription>

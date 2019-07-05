@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+    <ShortName>YouTube</ShortName>
+
+    <Url type="text/html" method="get" template="https://www.youtube.com/results?search_query={searchTerms}&amp;search=Search"/>
+    <Url type="application/x-suggestions+json" template="https://suggestqueries.google.com/complete/search?output=firefox&amp;ds=yt&amp;q={searchTerms}"/>
+    <InputEncoding>UTF-8</InputEncoding>
+    <SearchForm>https://www.youtube.com</SearchForm>
+</OpenSearchDescription>

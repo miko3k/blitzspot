@@ -1,0 +1,18 @@
+TODO APP:
+(MUST) implement settings
+(MUST) activity transitions
+(MUST) pretty CSS in mycroft or ditch id
+(MUST) rename dialog sometimes shows keyboard, sometimes not, turn into activity
+(MUST) make suggestion info less prominent!! (because it may be wrong - amazon de), also find out why amozon says it has suggestions but doesn't
+(MUST) more aggressive icon caching
+(MUST) shorter long press on the button and more response in general, maybe longer drag distance
+(MUST) initial plugin load
+https://stackoverflow.com/questions/1979369/android-activity-as-a-dialog - android:excludeFromRecents="true"
+do not clear suggestions immediately after typing a letter
+highlight/bold/shorten suggestions like google
+speech-to-text search
+search history/search history clear
+find out whats wrong with chinese google
+clicking on ADD in add_activity should close it
+(NICE) maybe try to estimate suggestion count somehow
+(NICE) network activity indicator

@@ -1,0 +1,81 @@
+/** Currently unused, an attempt to make mycroft website more mobile friendly */
+body {
+  font-family: sans-serif
+}
+
+.icon {
+  width: 16px;
+  height: 16px; }
+
+#leftside {
+  display: none
+}
+header {
+  display: none
+}
+#footer {
+  clear: both;
+  font-size: smaller;
+}
+body {
+  margin: 0;
+}
+label, strong, th {
+  font-weight: bold;
+  color: #970000;
+  background-color: transparent; }
+tbody th {
+  text-align: left;
+}
+td {
+  white-space: nowrap;
+}
+input.small, select.small {
+  width: 50px;
+}
+input.medium, select.medium {
+  width: 100px;
+}
+input.large, select.large {
+  width: 250px;
+}
+h1 {
+  color: #970000;
+  font-family: Helvetica, Arial, sans-serif;
+}
+h2 {
+  font-size: 1.17em;
+  color: #970000;
+  background-color: #FFCC77;
+  padding: 2px;
+}
+h3 {
+  font-size: 1.12em;
+  color: #970000;
+  background-color: transparent;
+  border-bottom: 3px solid #FFCC77;
+}
+form.inline {
+  display: inline;
+}
+.highlight {
+  background-color: yellow;
+}
+.flag {
+  border:1px solid black;
+}
+.icon {
+  width: 16px;
+  height: 16px;
+}
+a:link {
+  color:#970000;
+  text-decoration: none;
+}
+a:visited {
+  color: #3f003f;
+}
+a:hover {
+  color:#ff9900;
+  text-decoration: underline;
+}

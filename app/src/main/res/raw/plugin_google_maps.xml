@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+    xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+    <ShortName>Google Maps</ShortName>
+    <Url type="text/html" method="get" template="https://maps.google.com/maps?q={searchTerms}"/>
+    <InputEncoding>UTF-8</InputEncoding>
+    <moz:SearchForm>https://maps.google.com/</moz:SearchForm>
+    <Attribution>©2018 Google LLC All rights reserved. Google Maps is a trademark of Google LLC.</Attribution>
+</OpenSearchDescription>

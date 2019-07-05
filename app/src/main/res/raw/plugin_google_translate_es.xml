@@ -1,0 +1,7 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+    <ShortName>Google Translate (ES)</ShortName>
+    <Url type="text/html" method="get" template="https://translate.google.com/#auto/es/{searchTerms}"/>
+    <InputEncoding>UTF-8</InputEncoding>
+    <moz:SearchForm>https://translate.google.com</moz:SearchForm>
+    <Attribution>©2018 Google LLC All rights reserved. Google Translate is a trademark of Google LLC.</Attribution>
+</OpenSearchDescription>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/activityRoot"
+    tools:context=".activities.main.MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:fitsSystemWindows="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/HeaderBox"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/headerBarHeight"
+            app:layout_scrollFlags="snap|scroll"
+            android:elevation="10dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="blitz"
+                android:textColor="@android:color/white"
+                android:textSize="36dp"
+                android:typeface="serif"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText,SpUsage" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="spot"
+                android:textColor="@color/colorAccent"
+                android:textSize="36dp"
+                android:typeface="serif"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText,SpUsage"/>
+
+            <Button
+                android:id="@+id/settings"
+                style="@style/FullscreenTitleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/main_settings"
+                android:text="@string/settings"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:overScrollMode="ifContentScrolls"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/main_item">
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/popup"
+        style="@style/MainMenuCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/bubbleX"
+        android:layout_marginTop="87dp"
+        android:visibility="invisible"
+        app:cardCornerRadius="8dp"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="KeyboardInaccessibleWidget">
+
+            <TextView
+                android:drawableStart="@drawable/main_details"
+                android:id="@+id/popup_details"
+                style="@style/MainBubbleStyle"
+                android:layout_margin="0dp"
+                android:text="@string/details" />
+
+            <TextView
+                android:drawableStart="@drawable/main_rename"
+                android:id="@+id/popup_rename"
+                style="@style/MainBubbleStyle"
+                android:layout_margin="0dp"
+                android:text="@string/rename" />
+
+            <TextView
+                android:drawableStart="@drawable/main_delete"
+                android:id="@+id/popup_remove"
+                style="@style/MainBubbleStyle"
+                android:layout_margin="0dp"
+                android:text="@string/remove" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="end|bottom"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/main_plus_button" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

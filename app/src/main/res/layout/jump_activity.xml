@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chooser"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <fragment
+        android:id="@+id/fragment"
+        android:name="org.deletethis.blitzspot.app.fragments.choose.ChooseFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/chooserButtonBarHeight"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0" />
+
+        <CheckBox
+            android:id="@+id/editable_select"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
+            android:textSize="@dimen/buttonTextSize"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/chooserButtonHeight"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/edit_before"
+            android:textColor="@color/colorAccent"
+            android:buttonTint="@color/colorAccent"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/cancel"
+            style="@style/AlertButtonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/chooserButtonHeight"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/cancel" />
+
+
+    </LinearLayout>
+</LinearLayout>

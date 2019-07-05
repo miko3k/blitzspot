@@ -1,0 +1,155 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorSelection</item>
+        <item name="searchEditTextStyle">@style/SearchEditText</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:textAppearanceSmall">@style/AppTheme.TextAppearance.Small</item>
+        <item name="android:textAppearanceButton">@style/AppTheme.TextAppearance.Button</item>
+        <item name="alertDialogTheme">@style/AppTheme.AlertDialogTheme</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+
+    <style name="AppTheme.DialogActivity" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="windowNoTitle">true</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textAppearanceSmall">@style/AppTheme.TextAppearance.Small</item>
+        <item name="buttonBarButtonStyle">@style/AlertButtonBarButtonStyle</item>
+    </style>
+
+    <style name="AppTheme.FullscreenActivity">
+    </style>
+
+    <style name="AppTheme.PopupActivity">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--<item name="android:windowContentOverlay">@null</item>-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--<item name="android:windowAnimationStyle">@style/NoAnimation</item>-->
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+
+    <style name="AppTheme.AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="buttonBarButtonStyle">@style/AlertButtonBarButtonStyle</item>
+    </style>
+
+    <style name="AlertButtonBarButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textSize">@dimen/buttonTextSize</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Small" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Small.Inverse">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorTextReverse</item>
+    </style>
+
+
+    <style name="AppTheme.TextAppearance.Button" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">@dimen/buttonTextSize</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+
+    <style name="AppTheme.SearchActivity">
+        <!-- This is important, activity is actually not translucent, but keyboard seems to
+             close at the same time as activity and also open a bit faster -->
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+
+    <style name="MainBubbleStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:drawablePadding">16dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="FullscreenTitleStyle">
+        <item name="android:typeface">serif</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="FullscreenTitleButton" parent="Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:text">@string/settings</item>
+        <item name="android:textColor">@color/colorTextReverse</item>
+    </style>
+
+    <style name="EngineSourceBase">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">24dp</item>
+        <item name="android:paddingRight">24dp</item>
+    </style>
+
+    <style name="EngineSourceItem" parent="EngineSourceBase">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="EngineSourceHeader"  parent="EngineSourceBase">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Button</item>
+    </style>
+
+    <style name="MainMenuCard">
+        <item name="cardBackgroundColor">#fff</item>
+        <item name="cardElevation">8dp</item>
+    </style>
+
+    <style name="SearchEditText" parent="Base.Widget.AppCompat.EditText">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:imeOptions">flagNoExtractUi|flagNoFullscreen|actionSearch</item>
+    </style>
+
+    <style name="HeaderBox">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:elevation">10dp</item>
+    </style>
+
+    <style name="SearchButton">
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:padding">8sp</item>
+    </style>
+
+    <style name="MycroftButton">
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:layout_width">@dimen/mycroftToolbarButtonSize</item>
+        <item name="android:layout_height">@dimen/mycroftToolbarButtonSize</item>
+        <item name="android:gravity">center</item>
+        <item name="android:scaleType">center</item>
+        <item name="android:textColor">@color/colorTextReverse</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+</resources>

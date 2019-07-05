@@ -1,0 +1,87 @@
+<resources>
+    <string name="pref_private_mode" translatable="false">PREFERENCE_PRIVATE_MODE</string>
+    <string name="pref_clear_history" translatable="false">PREFERENCE_CLEAR</string>
+    <string name="pref_instant_active" translatable="false">PREFERENCE_INSTANT_ACTIVE</string>
+    <string name="pref_instant_plugin" translatable="false">PREFERENCE_INSTANT_PLUGIN</string>
+    <string translatable="false" name="search_affinity">org.deletethis.blitzspot.SEARCH_TASK_AFFINITY</string>
+
+
+    <string name="app_name">Blitzspot</string>
+    <string name="suggestion_removal_confirm">Remove this item from the search history?</string>
+    <string name="history_clear_confirm">Clear entire search history?</string>
+    <string name="open">Open</string>
+    <string name="link_in_browser">This link must be opened in the browser</string>
+    <string name="mycroft_project">Mycroft Project</string>
+    <string name="mycroft_top_100">Mycroft Top 100</string>
+    <string name="support_mycroft">Support Mycroft</string>
+    <string name="top_100">Top 100</string>
+    <string name="search">Search</string>
+    <string name="home">Home</string>
+    <string name="downloading_plugin">Downloading…</string>
+    <string name="downloading_plugin_failed">Failed to download the plugin due to the network error</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="add">Add</string>
+    <string name="parse_NOT_WELL_FORMED">Search plugin is not a valid XML document.</string>
+    <string name="parse_BAD_SYNTAX">Search plugin not understood.</string>
+    <string name="parse_USAGE_NOT_ALLOWED">Usage of this plugin is not permitted.</string>
+    <string name="parse_NO_URL">The search plugin does not contain the search URL.</string>
+    <string name="parse_INVALID_METHOD">The search plugin uses an unsupported HTTP method.</string>
+    <string name="parse_INTERNAL_ERROR">Internal error. Please report.</string>
+    <string name="search_engine_added">Search plugin added</string>
+    <string name="close">Close</string>
+    <string name="details">Details</string>
+    <string name="rename">Rename</string>
+    <string name="remove">Remove</string>
+    <string name="clear">Clear</string>
+    <string name="description">Description</string>
+    <string name="contact">Contact</string>
+    <string name="search_form">Search form</string>
+    <string name="adult_content">Adult content</string>
+    <string name="attribution">Attribution</string>
+    <string name="developer">Developer</string>
+    <string name="long_name">Long name</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="always_ask">Always ask</string>
+    <string name="settings">Settings</string>
+    <string name="rate_me">Rate me</string>
+    <string name="unable_to_read_file">Unable to read file</string>
+    <string name="back">Back</string>
+    <string name="suggestion_supported">Search plugin claims to provide search suggestions</string>
+    <string name="dflt">Default</string>
+    <string name="wikipedia">Wikipedia</string>
+    <string name="english">English</string>
+    <string name="german">German</string>
+    <string name="wiktionary">Wiktionary</string>
+    <string name="google_translate">Google Translate</string>
+    <string name="to_english">To English</string>
+    <string name="to_german">To German</string>
+    <string name="spanish">Spanish</string>
+    <string name="russian">Russian</string>
+    <string name="to_russian">To Russian</string>
+    <string name="to_spanish">To Spanish</string>
+    <string name="from_library">From library</string>
+    <string name="xml_file">XML file</string>
+
+    <string name="default_plugin_advice">To search using different plugin, long press the icon.</string>
+    <string name="enable_instant">Enable Instant</string>
+    <string name="instant_plugin">Instant plugin</string>
+
+    <string name="notification_text">Copy any text to search. Tap open settings.</string>
+    <string name="edit_before">Edit before</string>
+    <string name="enabled">Enabled</string>
+    <string name="no_plugins_message">No plugins found. Add some first!</string>
+    <string name="main_help_1"><![CDATA[<font color="ACCENT">Copy</font> any text, tap the floating icon and search instantly!]]></string>
+    <string name="main_help_2"><![CDATA[<font color="ACCENT">Drag the icon</font> to change its position, It will be remembered.]]></string>
+    <string name="main_help_3"><![CDATA[It is a requirement of recent Android versions to display a <font color="ACCENT">notification</font> for background apps. Feel free to block it.]]></string>
+    <string name="blitzspot_instant">Blitzspot Instant</string>
+    <string name="notification_channel_name">Blitzspot Instant</string>
+    <string name="notification_channel_description">Shown when Blitzspot Instant is active</string>
+    <string name="united_kingdom">United Kingdom</string>
+    <string name="germany">Germany</string>
+    <string name="russia">Russia</string>
+    <string name="spain">Spain</string>
+    <string name="ebay">eBay</string>
+    <string name="austria">Austria</string>
+</resources>
