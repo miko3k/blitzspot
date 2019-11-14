@@ -26,7 +26,7 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.appcompat.app.AlertDialog;
 
-class UriSelectionDialog extends DialogFragment {
+public class UriSelectionDialog extends DialogFragment {
     public interface UriSelectionCallback {
         void onUriSelected(Uri uri);
     }

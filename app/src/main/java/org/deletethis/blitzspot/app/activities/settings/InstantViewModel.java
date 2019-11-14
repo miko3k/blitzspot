@@ -30,7 +30,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.MutableLiveData;
 
-class InstantViewModel extends AndroidViewModel {
+public class InstantViewModel extends AndroidViewModel {
     private final Context context;
     private final InstantState applicationState;
     private final MediatorLiveData<String> hint;

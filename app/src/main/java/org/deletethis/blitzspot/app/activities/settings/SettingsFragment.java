@@ -53,7 +53,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceScreen;
 
-class SettingsFragment extends PreferenceFragmentCompat {
+public class SettingsFragment extends PreferenceFragmentCompat {
     private QueryRunner queryRunner;
     private Preference clearHistoryPreference;
     private MySwitchPreference activePreference;
