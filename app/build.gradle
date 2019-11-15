@@ -6,28 +6,18 @@ repositories {
 }
 
 android {
-    signingConfigs {
-        sign {
-            keyAlias 'spot'
-            keyPassword '9RMQedjhJ2ej9TyHKUffWSpfmkvmLL2r'
-            storeFile file('C:/p/Search/keystore.jks')
-            storePassword '9RMQedjhJ2ej9TyHKUffWSpfmkvmLL2r'
-        }
-    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "org.deletethis.blitzspot.app"
         minSdkVersion 24
         targetSdkVersion 28
-        versionCode 6
-        versionName "2.02"
+        versionCode 7
+        versionName "2.03"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
-            //minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.sign
         }
         debug {
             applicationIdSuffix ".debug"
