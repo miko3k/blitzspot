@@ -11,8 +11,8 @@ android {
         applicationId "org.deletethis.blitzspot.app"
         minSdkVersion 24
         targetSdkVersion 28
-        versionCode 7
-        versionName "2.03"
+        versionCode 8
+        versionName "2.04"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -33,21 +33,21 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
-    implementation 'com.google.android.material:material:1.1.0-alpha07'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.android.material:material:1.2.0-alpha06'
     implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta5'
     implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
     implementation 'com.skyfishjy.ripplebackground:library:1.0.1'
 
 
     implementation 'com.android.volley:volley:1.1.1'
     implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
-    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.github.miko3k:opensearch:f4a9ad4'
     implementation 'com.github.miko3k.mejico:mejico-android:26b5f1d8c4'
     implementation 'com.google.guava:guava:27.1-android'
-    implementation 'androidx.preference:preference:1.0.0'
+    implementation 'androidx.preference:preference:1.1.1'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'

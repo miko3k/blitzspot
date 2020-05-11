@@ -18,9 +18,12 @@
 
 package org.deletethis.blitzspot.app.activities.jump;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 import org.deletethis.blitzspot.app.R;
 import org.deletethis.blitzspot.app.activities.LaunchSearchActivity;
@@ -39,6 +42,33 @@ public class JumpActivity extends AppCompatActivity {
     private ChooseFragment fragment;
     private String query;
     private CheckBox editableCheckbox;
+    private TextView queryTextView;
+
+    private String getClipboardText() {
+        ClipboardManager clipboardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+        ClipData cd = clipboardManager.getPrimaryClip();
+        if(cd == null)
+            return null;
+
+        if(cd.getItemCount() == 0)
+            return null;
+
+        ClipData.Item itemAt = cd.getItemAt(0);
+        return itemAt.coerceToText(this).toString();
+    }
+
+    // https://medium.com/@fergaral/working-with-clipboard-data-on-android-10-f641bc4b6a31
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if(hasFocus) {
+            query = getClipboardText();
+            if(query == null) {
+                query = "";
+            }
+            query = query.trim();
+            queryTextView.setText(query);
+        }
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,16 +78,17 @@ public class JumpActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragment = (ChooseFragment)fragmentManager.findFragmentById(R.id.fragment);
         editableCheckbox = findViewById(R.id.editable_select);
+        queryTextView = findViewById(R.id.jump_query);
 
         findViewById(R.id.cancel).setOnClickListener(v -> {
             setResult(RESULT_CANCELED);
             finish();
         });
 
-
         query = getIntent().getStringExtra(QUERY);
-        if(query == null)
-            throw new IllegalStateException();
+        if(query == null || query.isEmpty()) {
+            // I think we always take this path, noone uses query anymore
+        }
 
         // we leave the checkbox initially visible, it's much more common case than
         // invisible, and it looks bad, when it appears later. We modify visibility,

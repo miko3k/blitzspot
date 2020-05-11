@@ -8,6 +8,17 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#888"
+        tools:text="Ugly text user just pasted in can be also quite long and containt whaerver"
+        android:ellipsize="end"
+        android:id="@+id/jump_query"
+        android:maxLines="1"
+        android:padding="20dp">
+    </TextView>
+
     <fragment
         android:id="@+id/fragment"
         android:name="org.deletethis.blitzspot.app.fragments.choose.ChooseFragment"

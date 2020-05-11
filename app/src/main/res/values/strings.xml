@@ -2,7 +2,6 @@
     <string name="pref_private_mode" translatable="false">PREFERENCE_PRIVATE_MODE</string>
     <string name="pref_clear_history" translatable="false">PREFERENCE_CLEAR</string>
     <string name="pref_instant_active" translatable="false">PREFERENCE_INSTANT_ACTIVE</string>
-    <string name="pref_instant_plugin" translatable="false">PREFERENCE_INSTANT_PLUGIN</string>
     <string translatable="false" name="search_affinity">org.deletethis.blitzspot.SEARCH_TASK_AFFINITY</string>
 
 
@@ -64,17 +63,15 @@
     <string name="from_library">From library</string>
     <string name="xml_file">XML file</string>
 
-    <string name="default_plugin_advice">To search using different plugin, long press the icon.</string>
     <string name="enable_instant">Enable Instant</string>
-    <string name="instant_plugin">Instant plugin</string>
 
-    <string name="notification_text">Copy any text to search. Tap open settings.</string>
+    <string name="notification_text">Tap to search!</string>
     <string name="edit_before">Edit before</string>
     <string name="enabled">Enabled</string>
     <string name="no_plugins_message">No plugins found. Add some first!</string>
-    <string name="main_help_1"><![CDATA[<font color="ACCENT">Copy</font> any text, tap the floating icon and search instantly!]]></string>
-    <string name="main_help_2"><![CDATA[<font color="ACCENT">Drag the icon</font> to change its position, It will be remembered.]]></string>
-    <string name="main_help_3"><![CDATA[It is a requirement of recent Android versions to display a <font color="ACCENT">notification</font> for background apps. Feel free to block it.]]></string>
+    <string name="main_help_1">1. <![CDATA[<font color="ACCENT">Copy</font> any text]]></string>
+    <string name="main_help_2">2. <![CDATA[<font color="ACCENT">Tap</font> the notification]]></string>
+    <string name="main_help_3">3. <![CDATA[See the <font color="ACCENT">results</font>]]></string>
     <string name="blitzspot_instant">Blitzspot Instant</string>
     <string name="notification_channel_name">Blitzspot Instant</string>
     <string name="notification_channel_description">Shown when Blitzspot Instant is active</string>
@@ -84,4 +81,5 @@
     <string name="spain">Spain</string>
     <string name="ebay">eBay</string>
     <string name="austria">Austria</string>
+    <string name="open_app">Open App</string>
 </resources>

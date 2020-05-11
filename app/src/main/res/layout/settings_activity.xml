@@ -70,41 +70,6 @@
                 android:layout_height="wrap_content"
                 android:name="org.deletethis.blitzspot.app.activities.settings.SettingsFragment"/>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/hintContainer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:visibility="invisible"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="3dp"
-                tools:visibility="visible">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="top"
-                        android:paddingEnd="8dp"
-                        android:importantForAccessibility="no"
-                        app:srcCompat="@drawable/jump_info_icon" />
-
-                    <TextView
-                        android:id="@+id/hint"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:textSize="12sp"
-                        tools:text="Did you brush your teeth today?" />
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
