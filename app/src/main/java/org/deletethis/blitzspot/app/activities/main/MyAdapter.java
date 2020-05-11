@@ -21,6 +21,7 @@ package org.deletethis.blitzspot.app.activities.main;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.deletethis.blitzspot.app.InstantState;
 import org.deletethis.blitzspot.app.R;
 import org.deletethis.blitzspot.app.dao.PluginWithId;
 import org.deletethis.blitzspot.lib.Logging;

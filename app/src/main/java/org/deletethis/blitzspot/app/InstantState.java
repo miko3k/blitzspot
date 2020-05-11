@@ -50,6 +50,7 @@ public class InstantState {
 
     private final MutableLiveData<Boolean> running;
     private final Handler handler;
+    private final Context context;
 
     public static InstantState get(Context context) {
         if (Looper.myLooper() != Looper.getMainLooper()) {
@@ -69,6 +70,7 @@ public class InstantState {
         // running is for sure false
         this.running.setValue(false);
         this.handler = new Handler();
+        this.context = context.getApplicationContext();
     }
 
     public LiveData<Boolean> getRunning() {
@@ -83,7 +85,7 @@ public class InstantState {
         running.setValue(false);
     }
 
-    public static boolean isEnabled(Context context) {
+    public boolean isEnabled() {
         ComponentName receiver = new ComponentName(context, BootReceiver.class);
         PackageManager pm = context.getPackageManager();
 
@@ -91,7 +93,7 @@ public class InstantState {
         return componentEnabledSetting == PackageManager.COMPONENT_ENABLED_STATE_ENABLED;
     }
 
-    public void start(Context context) {
+    public void start() {
         ComponentName receiver = new ComponentName(context, BootReceiver.class);
         PackageManager pm = context.getPackageManager();
 
@@ -106,7 +108,13 @@ public class InstantState {
         }
     }
 
-    public void stop(Context context) {
+    public void refresh() {
+        if(isEnabled()) {
+            start();
+        }
+    }
+
+    public void stop() {
         ComponentName receiver = new ComponentName(context, BootReceiver.class);
         PackageManager pm = context.getPackageManager();
 

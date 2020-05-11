@@ -20,11 +20,14 @@ package org.deletethis.blitzspot.app.activities.jump;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import org.deletethis.blitzspot.app.Intents;
 import org.deletethis.blitzspot.app.R;
 import org.deletethis.blitzspot.app.activities.LaunchSearchActivity;
 import org.deletethis.blitzspot.app.dao.DbOpenHelper;
@@ -37,12 +40,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
 public class JumpActivity extends AppCompatActivity {
-    public static final String QUERY = JumpActivity.class.getName() + ".QUERY";
-
     private ChooseFragment fragment;
     private String query;
     private CheckBox editableCheckbox;
     private TextView queryTextView;
+    private byte [] selectedPlugin;
+
+    public static String DATA_URI_PREFIX = "data:application/octet-stream;base64,";
 
     private String getClipboardText() {
         ClipboardManager clipboardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
@@ -60,12 +64,20 @@ public class JumpActivity extends AppCompatActivity {
     // https://medium.com/@fergaral/working-with-clipboard-data-on-android-10-f641bc4b6a31
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-        if(hasFocus) {
-            query = getClipboardText();
-            if(query == null) {
-                query = "";
-            }
-            query = query.trim();
+        if (!hasFocus) {
+            // dunno
+            return;
+        }
+        query = getClipboardText();
+        if (query == null) {
+            query = "";
+        }
+        query = query.trim();
+
+        if (selectedPlugin != null) {
+            LaunchSearchActivity.launch(this, query, selectedPlugin, false, false);
+            finish();
+        } else {
             queryTextView.setText(query);
         }
     }
@@ -73,22 +85,33 @@ public class JumpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Uri uri = getIntent().getData();
+        if(uri != null) {
+            String s = uri.toString();
+            if(s.startsWith(DATA_URI_PREFIX)) {
+                selectedPlugin = Base64.decode(s.substring((DATA_URI_PREFIX.length())), Base64.URL_SAFE);
+            }
+        }
+        if(selectedPlugin != null) {
+            // logic is quite different, maybe this belongs more to LaunchSearchActivity but
+            // we aleady have the logic to access the clipboard
+            return;
+        }
+
         setContentView(R.layout.jump_activity);
+
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragment = (ChooseFragment)fragmentManager.findFragmentById(R.id.fragment);
         editableCheckbox = findViewById(R.id.editable_select);
         queryTextView = findViewById(R.id.jump_query);
 
+
         findViewById(R.id.cancel).setOnClickListener(v -> {
             setResult(RESULT_CANCELED);
             finish();
         });
-
-        query = getIntent().getStringExtra(QUERY);
-        if(query == null || query.isEmpty()) {
-            // I think we always take this path, noone uses query anymore
-        }
 
         // we leave the checkbox initially visible, it's much more common case than
         // invisible, and it looks bad, when it appears later. We modify visibility,

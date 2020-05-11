@@ -57,6 +57,7 @@ import org.deletethis.blitzspot.lib.SimpleTextWatcher;
 import org.deletethis.blitzspot.lib.SharedPreferenceLiveData;
 
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -92,8 +93,8 @@ public class MainActivity extends AppCompatActivity implements ItemTouchListener
 
         setContentView(R.layout.main_activity);
 
-        if(InstantState.isEnabled(this)) {
-            InstantState.get(this).start(this);
+        if(InstantState.get(this).isEnabled()) {
+            InstantState.get(this).start();
         }
 
         popup = findViewById(R.id.popup);
@@ -179,7 +180,7 @@ public class MainActivity extends AppCompatActivity implements ItemTouchListener
             contentValues.put(DbConfig.ENGINE_DATA, data);
             db.update(DbConfig.ENGINES, contentValues, DbConfig.ENGINE_ID + " = " + plugin.getId(), null);
             return SelectSearchPlugins.get(this).execute(db, cancel);
-        }, adapter::setSearchEngines);
+        }, this::doRefresh);
     }
 
     private void showRenameDialog(View ignored) {
@@ -266,7 +267,13 @@ public class MainActivity extends AppCompatActivity implements ItemTouchListener
         queryRunner.run((db, cancel) -> {
             db.delete(DbConfig.ENGINES, DbConfig.ENGINE_ID + " = " + id, null);
             return SelectSearchPlugins.get(this).execute(db, cancel);
-        }, adapter::setSearchEngines);
+        }, this::doRefresh);
+    }
+
+    private void doRefresh(List<PluginWithId> list) {
+        InstantState.get(this).refresh();
+        adapter.setSearchEngines(list);
+
     }
 
     @Override
@@ -276,7 +283,7 @@ public class MainActivity extends AppCompatActivity implements ItemTouchListener
             contentValues.put(DbConfig.ENGINE_ORDERING, ordering);
             db.update(DbConfig.ENGINES, contentValues, DbConfig.ENGINE_ID + " = " + what, null);
             return SelectSearchPlugins.get(this).execute(db, cancel);
-        }, adapter::setSearchEngines);
+        }, this::doRefresh);
     }
 
     private PluginWithId getEngineWithId(MyAdapter.MyViewHolder viewHolder) {
@@ -416,8 +423,9 @@ public class MainActivity extends AppCompatActivity implements ItemTouchListener
 
             case REQUEST_CODE_INFO:
                 byte[] engineData = Intents.getPluginExtra(resultData);
-                queryRunner.runUncancellable(new InsertSearchPlugin(engineData), unused ->
-                        queryRunner.run(SelectSearchPlugins.get(this), adapter::setSearchEngines));
+                queryRunner.runUncancellable(new InsertSearchPlugin(engineData), unused -> {
+                    queryRunner.run(SelectSearchPlugins.get(this), this::doRefresh);
+                });
                 break;
         }
     }

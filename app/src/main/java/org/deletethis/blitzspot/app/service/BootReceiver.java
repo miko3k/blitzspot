@@ -38,7 +38,7 @@ public class BootReceiver extends BroadcastReceiver {
             switch (action) {
                 case "android.intent.action.QUICKBOOT_POWERON":
                 case Intent.ACTION_BOOT_COMPLETED:
-                    InstantState.get(context).start(context);
+                    InstantState.get(context).start();
             }
         }
     }

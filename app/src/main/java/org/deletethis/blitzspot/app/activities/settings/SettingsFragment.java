@@ -135,9 +135,9 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         Context context = Objects.requireNonNull(getContext(), "null context");
 
         if (!checked) {
-            applicationState.stop(context);
+            InstantState.get(context).stop();
         } else {
-            applicationState.start(context);
+            InstantState.get(context).start();
         }
     }
 }
