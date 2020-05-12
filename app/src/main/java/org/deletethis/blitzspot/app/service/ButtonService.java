@@ -75,7 +75,6 @@ public class ButtonService extends LifecycleService {
                     getString(R.string.notification_channel_name),
                     NotificationManager.IMPORTANCE_LOW);
             channel.setDescription(getString(R.string.notification_channel_description));
-            channel.setLockscreenVisibility(Notification.VISIBILITY_SECRET);
             if(notificationManager != null) {
                 notificationManager.createNotificationChannel(channel);
             }
@@ -107,14 +106,13 @@ public class ButtonService extends LifecycleService {
 
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(this, DEFAULT_CHANNEL);
-
         builder
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setSmallIcon(R.drawable.status)
-                .setContentTitle(getString(R.string.blitzspot_instant))
-                .setContentText(getString(R.string.notification_text))
+                .setContentTitle(getString(R.string.notification_text))
                 .setShowWhen(false)
                 .setOngoing(true)
+                .setVisibility(NotificationCompat.VISIBILITY_SECRET)
                 .setContentIntent(search);
 
         for(PluginWithId plugin: this.plugins.subList(0, Math.min(plugins.size(), MAX_DIRECT))) {
